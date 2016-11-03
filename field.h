@@ -16,26 +16,11 @@ enum Field {
 class STAGE
 {
     vector<Field> stage;
-    int startPlace;
+    int playerPlace;
+
+public:
 
     STAGE();
-    STAGE(int start, int size, Field* field);
+    STAGE(int size, Field* field);
+    void DispField();
 };
-
-STAGE::STAGE() 
-{
-    int i;
-    for (i = 0; i < ROW*COL; i++) {
-        stage.push_back(WAL);
-    }
-}
-
-STAGE::STAGE(int start, int size, Field* field)
-{
-    startPlace = start;
-    int i;
-    
-    for (i = 0; i < size; i++) {
-        stage.push_back(field[i]);
-    }
-}
